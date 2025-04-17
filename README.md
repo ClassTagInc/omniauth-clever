@@ -25,7 +25,7 @@ Example: In `config/initializers/omniauth.rb`, do:
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :clever, ENV['CLEVER_CLIENT_ID'], ENV['CLEVER_CLIENT_SECRET'],
-           api_version: 'v2.1' # Optional – defaults to 'v3.0'
+           api_version: 'v3.0'
 end
 ```
 
