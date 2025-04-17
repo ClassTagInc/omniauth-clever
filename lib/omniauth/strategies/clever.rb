@@ -9,6 +9,7 @@ module OmniAuth
       # login, a state parameter is not relevant nor sent.
 
       option :name, "clever"
+      option :api_version, 'v3.0'
       option :client_options, {
         :site          => 'https://api.clever.com',
         :authorize_url => 'https://clever.com/oauth/authorize',
@@ -55,7 +56,10 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access_token.get('/me').parsed
+        @raw_info ||= access_token.get(
+          '/me',
+          { 'Accept-Version' => options.api_version }
+        ).parsed
       end
 
       # Fix unknown redirect uri bug by NOT appending the query string to the callback url.
