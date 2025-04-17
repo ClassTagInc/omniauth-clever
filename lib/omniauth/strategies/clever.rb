@@ -9,7 +9,7 @@ module OmniAuth
       # login, a state parameter is not relevant nor sent.
 
       option :name, "clever"
-      option :api_version, 'v2.1'
+      option :api_version, 'v3.0'
       option :client_options, {
         :site          => 'https://api.clever.com',
         :authorize_url => 'https://clever.com/oauth/authorize',
